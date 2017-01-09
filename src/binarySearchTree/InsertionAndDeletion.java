@@ -12,6 +12,10 @@ public class InsertionAndDeletion {
 		root = new TreeNode(data);
 	}
 	
+	private void insert(int data) {
+		this.root = insertIntoTree(this.root, data);
+	}
+	
 	private TreeNode insertIntoTree(TreeNode root, int data) {
 		if(root == null) {
 			root = new TreeNode(data);
@@ -35,26 +39,40 @@ public class InsertionAndDeletion {
 		}
 	}
 	
-	private void insert(int data) {
-		this.root = insertIntoTree(this.root, data);
+	private int findMin(TreeNode root) {
+		while(root.left != null) {
+			root = root.left;
+		}
+		
+		return root.data;
 	}
 	
 	private TreeNode delete(TreeNode root, int data) {
 		if(root == null) {
-			return null;
+			return root;
 		} 
 		if(root.data == data) {
 			if(root.left == null && root.right == null) {
-				root = null;
+				return null;
+			} else if(root.left != null  && root.right == null) {  // only left child
+				return root.left;
+			} else if(root.right != null  && root.left == null) {  // only right child
+				return root.right;
+			} else {                                               // both children are present
+				root.data = findMin(root.right);
+				root.right = delete(root.right, root.data);
+				return root;
 			}
 			
 		} else {
 			if(data < root.data) {
-				delete(root.left, data);
+				root.left = delete(root.left, data);
 			} else {
-				delete(root.right, data);
+				root.right = delete(root.right, data);
 			}
 		}
+		
+		return root;
 	}
 	
 	private void deleteNode(int data) {
@@ -77,17 +95,17 @@ public class InsertionAndDeletion {
         
         System.out.println("\nDelete 20\n");
         tree.deleteNode(20);
-        System.out.println("Inorder traversal of the modified tree \n");
+        System.out.println("Preorder traversal of the modified tree \n");
         tree.preOrder(tree.root);
      
         System.out.println("\nDelete 30\n");
         tree.deleteNode(30);
-        System.out.println("Inorder traversal of the modified tree \n");
+        System.out.println("Preorder traversal of the modified tree \n");
         tree.preOrder(tree.root);
      
         System.out.println("\nDelete 50\n");
         tree.deleteNode(50);
-        System.out.println("Inorder traversal of the modified tree \n");
+        System.out.println("Preorder traversal of the modified tree \n");
         tree.preOrder(tree.root);
         
         

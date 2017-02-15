@@ -53,7 +53,7 @@ public class MirrorofTree<T> {
 		
 		tree.preOrder(tree.root);
 		TreeNode<Integer> newNode = tree.mirror(tree.root);
-		System.out.println("After mirroring");
+		System.out.println("\nAfter mirroring");
 		tree.preOrder(newNode);
 
 	}

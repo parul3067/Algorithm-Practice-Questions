@@ -39,7 +39,7 @@ public class RemoveDuplicate {
 		// TODO Auto-generated method stub
 		RemoveDuplicate obj = new RemoveDuplicate();
 		LinkedList l1 = new LinkedList();
-		l1.add(1.5);   //// not working for floar or double
+		/*l1.add(1.5);   //// not working for floar or double
 		l1.add(2.3);
 		l1.add(5.1);
 		l1.add(2.3);
@@ -47,7 +47,8 @@ public class RemoveDuplicate {
 		l1.add(2.1);
 		l1.add(2.6);
 		l1.add(6.5);
-		/*l1.add(1);
+		*/l1.add(1);
+		l1.add(1);
 		l1.add(2);
 		l1.add(5);
 		l1.add(2);
@@ -58,7 +59,7 @@ public class RemoveDuplicate {
 		l1.add(7);
 		l1.add(2);
 		l1.print();
-		*/
+		
 		LinkedList l2 = new LinkedList<>();
 		l2 = obj.removeDuplicate(l1,l2);
 		System.out.println("After deleting duplicates : out place");

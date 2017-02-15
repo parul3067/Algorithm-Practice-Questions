@@ -46,7 +46,7 @@ public class NextGreaterElement {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		NextGreaterElement obj = new NextGreaterElement();
-		int inputArray[] = {11, 13, 21, 3}; 
+		int inputArray[] = {2,4,1,3,5,10}; 
 		
 		obj.findNextGreaterElementUsingStack(inputArray);
 		obj.findNextGreaterElementUsingArray(inputArray);

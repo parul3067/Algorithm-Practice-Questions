@@ -10,8 +10,6 @@ public class RootToLeafPath<T> {
 	TreeNode<T> root;
 	ArrayList<TreeNode<T>> listOfPath = new ArrayList<TreeNode<T>>();	
 	
-	
-	
 	public RootToLeafPath() {
 		this.root = null;
 	}

@@ -63,7 +63,6 @@ public class InsertionAndDeletion {
 				root.right = delete(root.right, root.data);
 				return root;
 			}
-			
 		} else {
 			if(data < root.data) {
 				root.left = delete(root.left, data);
